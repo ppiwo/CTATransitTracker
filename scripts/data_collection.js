@@ -2,27 +2,53 @@ let route = ["red", "blue", "brown", "green", "orange", "pink", "purple", "yello
 let requestUrl = "https://corsproxy22.herokuapp.com/"; //Using CORS proxy written in Node to prevent CORS errors
 let trainData = []; //Storing all JSON data from API requests
 
-function async gatherRequests(){
-  route.forEach(function(trainLine){
-    getRequest(trainLine);
-  });
-}
+//  async function gatherRequests(){
+//   route.forEach(function(trainLine){
+//     getRequest(trainLine);
+//   });
+// }
 
 
-    //making api call for each route, appending route color and adding to trainData array
-     function getRequest async (route) {
-              await fetch(requestUrl + route)
-              .then(res => res.json())
-              .then((out) => {
-                for (var i = 0; i < out.ctatt.route[0].train.length; i++){ //add route color prop to each train
-                  out.ctatt.route[0].train[i].lineColor = route;
-                }
-                trainData.push(out);
-                console.log(trainData);
-                //plotPoints();
-              })
-              .catch(err => { throw err });
-          };
+//     //making api call for each route, appending route color and adding to trainData array
+//      function getRequest (route) {
+//               await fetch(requestUrl + route)
+//               .then(res => res.json())
+//               .then((out) => {
+//                 for (var i = 0; i < out.ctatt.route[0].train.length; i++){ //add route color prop to each train
+//                   out.ctatt.route[0].train[i].lineColor = route;
+//                 }
+//                 trainData.push(out);
+//                 console.log(trainData);
+//                 //plotPoints();
+//               })
+//               .catch(err => { throw err });
+//           };
+
+
+      const getData = (routes)=>{
+
+        let trainmappings = []
+
+        const getRes = async (route) =>{
+                  await fetch(requestUrl + route)
+                  .then(res => res.json())
+                  .then((out) => {
+                    for (var i = 0; i < out.ctatt.route[0].train.length; i++){ //add route color prop to each train
+                      out.ctatt.route[0].train[i].lineColor = route;
+                    }
+                    trainmappings.push(out);
+                    console.log(trainData);
+                    //plotPoints();
+                  })
+                  .catch(err => { throw err });
+              };
+
+        routes.map(i => {
+          await getRes(i)
+        })
 
 
 
+      }
+
+      getData(route);

@@ -19,5 +19,5 @@ function plotPoints(location){
         map: map,
         title: 'Hello World!'
       });
-      console.log('hi');
+      // console.log('hi');
 }
