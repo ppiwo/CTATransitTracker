@@ -1,7 +1,6 @@
 let route = ["red", "blue", "brown", "green", "orange", "pink", "purple", "yellow"];
 let requestUrl = "https://corsproxy22.herokuapp.com/"; //Using CORS proxy written in Node to prevent CORS errors
 // let trainData = [""]; //Storing all JSON data from API requests
-console.log('test!');
 
       const getData = (routes)=>{
 
@@ -15,18 +14,26 @@ console.log('test!');
                       out.ctatt.route[0].train[i].lineColor = route;
                     }
                     trainmappings.push(out);
-                    console.log(trainmappings);
-                    //plotPoints();
+                    parseData(trainmappings.pop());
                   })
-                  .catch(err => { throw err });
+                  .catch(err => { console.log('error') });
               };
+      function successCallback(){
+        console.log('success')
+      }
+
+      function failCallback(){
+        console.log('fail')
+      }
 
         routes.map(i => {
-          getRes(i)
+          getRes(i, successCallback, failCallback)
         })
 
 
-
       }
-
-      getData(route);
+    const interval = setInterval(function() {
+      getData(route);
+      }, 5000);
+      interval();
+      console.log(trainmappings);
