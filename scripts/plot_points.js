@@ -1,5 +1,6 @@
 var map;
 var marker;
+var markerMap = []
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -8,16 +9,20 @@ var marker;
         });
       }
 
-function plotPoints(lati, long, line){
+function plotPoints(lati, long, line, routeNumber){
   var myLatLng = {lat: Number(lati), lng: Number(long)};
-  marker = new google.maps.Marker({
+  var marker = new google.maps.Marker({
     position: myLatLng,
     map: map,
     title: 'Hello World!',
+    routeNumber: routeNumber,
     // icon: {
     //   url: "http://google.com/mapfiles/ms/micons/purple.png"
     // }
   });
+  if (marker.typeof != "undefined"){
+    markerMap.push(marker);
+  }
 }
 
 function clearMap(){
@@ -31,5 +36,20 @@ function clearMarkers() {
 
 function setMapOnAll(map) {
     marker.setMap(map);
+}
+
+function getMarkerRouteNumber(marker){
+   removeMarkerIfExists (marker.routeNumber);
+}
+
+function removeMarkerIfExists(routeNumber){
+  if (markerMap.findIndex(routeNumber) != undefined){
+  console.log(found);
+  }
+  removeMarker(found);
+}
+
+function removeMarker (marker){
+  markers[indexOfMarker].setMap(null);
 }
 
