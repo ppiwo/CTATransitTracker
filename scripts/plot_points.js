@@ -18,7 +18,7 @@ function plotPoints(lati, long, line, routeNumber){
   var marker = new google.maps.Marker({
     position: myLatLng,
     map: map,
-    title: 'Hello World!',
+    title: line,
     routeNumber: routeNumber,
     icon: {
       url: setMarkerColor(line)
@@ -31,61 +31,48 @@ function plotPoints(lati, long, line, routeNumber){
 }
 
 function setMarkerColor(line){
+  if (line === "red"){
+    return "https://i.imgur.com/G87R2fz.png"
+  }
+  if (line === "blue"){
+    return "https://i.imgur.com/G5NXF95.png"
+  }
+  if (line === "brown"){
+    return "https://i.imgur.com/yG803c5.png"
+  }
+  if (line === "green"){
+    return "https://i.imgur.com/ZIlCwii.png"
+  }
+  if (line === "orange"){
+    return "https://i.imgur.com/wMf7NbR.png"
+  }
+  if (line === "pink"){
+    return "https://i.imgur.com/KSHqsW1.png"
+  }
+  if (line === "purple"){
+    return "https://i.imgur.com/CnDLNOO.png"
+  }
+  if (line === "yellow"){
+    return "https://i.imgur.com/3PEJWHZ.png"
+  }
 
+
+
+
+
+
+
+window.localStorage.setItem('user', JSON.stringify(person));
 }
 
 function checkIfMarkerExists(routeNumberNew, lat, long){
   for (var i = 0; i < markerMap.length; i++){
-    console.log (markerMap[i].routeNumber)
     if (markerMap[i].routeNumber == routeNumberNew){
-      console.log('exists')
       var latLng = {lat: Number(lat), lng: Number(long)};
       markerMap[i].setPosition(latLng);
       return true;
     }
     // return false;
   }
-}
-
-
-
-// function clearMap(){
-//   clearMarkers();
-//   markers = [];
-// }
-
-// function clearMarkers() {
-//   setMapOnAll(null);
-// }
-
-// function setMapOnAll(map) {
-//     marker.setMap(map);
-// }
-
-// function getMarkerRouteNumber(marker){
-//    removeMarkerIfExists (marker.routeNumber, marker);
-// }
-
-// function removeMarkerIfExists(routeNumberOfMarker, marker){
-//   for (var i = 0; i < markerMap.length; i++){
-//     console.log(routeNumberOfMarker)
-//     if (markerMap[i].routeNumber == routeNumberOfMarker){
-//       console.log('exists' + markerMap[i].routeNumber);
-//       console.log(i)
-//       // removeMarker(i);
-//     } 
-//   }
-//   // console.log(marker.routeNumber);
-//   // let found = markerMap.findIndex(marker.routeNumber)
-//   // console.log(found);
-//   // // if (markerMap.findIndex(marker.routeNumber) != -1){
-//   // // console.log(found);
-//   // // removeMarker(found);
-//   // }
-// }
-
-function removeMarker (indexOfMarker){
-  markerMap[indexOfMarker].setMap(null);
-  markerMap.splice(indexOfMarker,1);
 }
 
