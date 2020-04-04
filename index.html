@@ -5,15 +5,41 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style/googlemaps.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <script type="text/javascript" src="scripts/ui_controller.js"></script>
     <script type="text/javascript" src="scripts/plot_points.js"></script>
     <script type="text/javascript" src="scripts/test.js"></script>
     <script type="text/javascript" src="scripts/data_parse.js"></script>
     <script type="text/javascript" src="scripts/data_collection.js"></script>
     <script type="text/javascript" src="config.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXOKuD4KqV7u_1AY295qwmTYvbotatIMM&callback=initMap"></script>
   </head>
   <body>
-    <div id="map"></div>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXOKuD4KqV7u_1AY295qwmTYvbotatIMM&callback=initMap"></script>
+    <header>CTA Transit Tracker</header>
+    <main class="mainWrapper">
+      <section class="trainDetails">
+        <span id="timeDisplay"></span>
+        <span id="dateDisplay"></span>
+        <h2>Train Details</h2>
+        <nav class="detailsNav">
+          <button id="trainDetailsToggle" onclick="trainDetailsToggle()">Train Details</button>
+          <button id="settingsToggle" onclick="settingsToggle()">Settings</button>
+        </nav>
+        <table class="trainDetailsTable">
+          <tr class="trainDetailHeadings">
+            <th>Route #</th>
+            <th>Line</th>
+            <th>Last Updated</th>
+          </tr>
+          <tr class="trainData" id="000">
+            <td class="routeNumber">000</td>
+            <td class="lineName">Red</td>
+            <td class="lastUpdated">1:23:00AM</td>
+          </tr>
+        </table>
+      </section>
+      <div id="map"></div>
+  </main>
   </body>
 </html>

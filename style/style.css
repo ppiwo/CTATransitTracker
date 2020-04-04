@@ -1,0 +1,45 @@
+header {
+    margin: .2em 0em .2em 0em;
+    font-size: 3em;
+    align-self: center;
+    color: white;
+}
+
+.mainWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.trainDetails {
+    margin-top: 3em;
+}
+
+.trainDetails h2 {
+    font-size: 2em;
+}
+
+#map {
+    margin-left: auto;
+    width: 75%;
+    height: 92.5vh;
+}
+
+th {
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+table {
+    display: flex;
+    flex-direction: column;
+}
+
+td {
+    text-align: center;
+    background-color: khaki;
+    border: solid black .2em;
+}
+
+body {
+    background-color: gray;
+}

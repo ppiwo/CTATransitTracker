@@ -32,28 +32,28 @@ function plotPoints(lati, long, line, routeNumber){
 
 function setMarkerColor(line){
   if (line === "red"){
-    return "https://i.imgur.com/G87R2fz.png"
+    return "http://127.0.0.1:5500/assets/train_markers/red_line.png"
   }
   if (line === "blue"){
-    return "https://i.imgur.com/G5NXF95.png"
+    return "http://127.0.0.1:5500/assets/train_markers/blue_line.png"
   }
   if (line === "brown"){
-    return "https://i.imgur.com/yG803c5.png"
+    return "http://127.0.0.1:5500/assets/train_markers/brown_line.png"
   }
   if (line === "green"){
-    return "https://i.imgur.com/ZIlCwii.png"
+    return "http://127.0.0.1:5500/assets/train_markers/green_line.png"
   }
   if (line === "orange"){
-    return "https://i.imgur.com/wMf7NbR.png"
+    return "http://127.0.0.1:5500/assets/train_markers/orange_line.png"
   }
   if (line === "pink"){
-    return "https://i.imgur.com/KSHqsW1.png"
+    return "http://127.0.0.1:5500/assets/train_markers/pink_line.png"
   }
   if (line === "purple"){
-    return "https://i.imgur.com/CnDLNOO.png"
+    return "http://127.0.0.1:5500/assets/train_markers/purple_line.png"
   }
   if (line === "yellow"){
-    return "https://i.imgur.com/3PEJWHZ.png"
+    return "http://127.0.0.1:5500/assets/train_markers/yellow_line.png"
   }
 
 
