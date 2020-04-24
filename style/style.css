@@ -22,6 +22,7 @@ header {
     margin-left: auto;
     width: 75%;
     height: 92.5vh;
+    z-index: 2;
 }
 
 th {
@@ -29,12 +30,12 @@ th {
     padding: 1em;
 }
 
-table {
+.trainDetailsTable {
     display: flex;
     flex-direction: column;
 }
 
-td {
+.trainDetailsTable td {
     text-align: center;
     background-color: khaki;
     border: solid black .2em;
@@ -42,4 +43,10 @@ td {
 
 body {
     background-color: gray;
+}
+
+.settingsIcon {
+    height: 3em;
+    position: fixed;
+    bottom: 0px;
 }

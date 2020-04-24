@@ -1,0 +1,42 @@
+#settingsModal{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    left: 40%;
+    top: 30%;
+    z-index:3;
+    background-color: white;
+    border: .2em solid black;
+    border-radius: 1em;
+    width: 30%;
+    padding: 1em;
+}
+
+#settingsModal h2{
+    position: absolute;
+    left: 42%;
+    top: .2em;
+    font-size: 2em;
+}
+
+#settingsModal #close_button{
+    position: absolute;
+    right: 0em;
+    top: .2em;
+    height: 3em;
+}
+
+#settingsModal tr {
+    display: flex;
+    flex-direction: column;
+}
+
+#close_button {
+    padding-left: 3em;
+}
+
+#settingsModal table {
+    text-align: center;
+    margin: auto;
+}

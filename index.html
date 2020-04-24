@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style/googlemaps.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/settings.css">
     <script type="text/javascript" src="scripts/ui_controller.js"></script>
     <script type="text/javascript" src="scripts/plot_points.js"></script>
     <script type="text/javascript" src="scripts/test.js"></script>
@@ -18,6 +19,23 @@
   <body>
     <header>CTA Transit Tracker</header>
     <main class="mainWrapper">
+      <section id="settingsModal">
+        <h2>Settings</h2>
+        <img id="close_button" onclick="settingsToggle()" src="assets/ui/close.png" alt="close button">
+        <table>
+          <th>Display Train Lines:</th>
+          <tr>
+            <td>Red <input type="checkbox" onclick="displayLinesToggle('red')" checked></td>
+            <td>Blue <input type="checkbox" onclick="displayLinesToggle('blue')" checked></td>
+            <td>Green <input type="checkbox" onclick="displayLinesToggle('green')" checked></td>
+            <td>Purple <input type="checkbox" onclick="displayLinesToggle('purple')" checked></td>
+            <td>Pink <input type="checkbox" onclick="displayLinesToggle('pink')" checked></td>
+            <td>Yellow <input type="checkbox" onclick="displayLinesToggle('yellow')" checked></td>
+            <td>Orange <input type="checkbox" onclick="displayLinesToggle('orange')" checked></td>
+            <td>Brown <input type="checkbox" onclick="displayLinesToggle('brown')" checked></td>
+          </tr>
+        </table>
+      </section>
       <section class="trainDetails">
         <span id="timeDisplay"></span>
         <span id="dateDisplay"></span>
@@ -38,8 +56,9 @@
             <td class="lastUpdated">1:23:00AM</td>
           </tr>
         </table>
+        <img class="settingsIcon" src="assets/ui/settings.png" alt="Settings" onclick="settingsToggle()">
       </section>
-      <div id="map"></div>
   </main>
+  <div id="map"></div>
   </body>
 </html>
