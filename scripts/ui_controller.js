@@ -13,6 +13,13 @@ function settingsToggle(){
 }
 
 function displayLinesToggle(trainLine){
-    var trainLineIndex = route.indexOf(trainLine);
-    route.splice(trainLineIndex, 1);
+    if (route.indexOf(trainLine) != -1){
+        var trainLineIndex = route.indexOf(trainLine);
+        route.splice(trainLineIndex, 1);
+    }
+    else {
+        route.push(trainLine);
+        console.log(route);
+
+    }
 }
