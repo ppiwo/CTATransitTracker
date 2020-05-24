@@ -1,0 +1,31 @@
+#menuswitch {
+    width: 10%;
+}
+
+.lineSlider {
+    margin: 0px 0px 0px 0px;
+}
+
+.sidenav .divider {
+    margin-top: 5px;
+}
+
+#settingsIcon {
+    font-size: 40px;
+}
+
+#closeSettings {
+    position: fixed;
+    right: 0px;
+    font-size: 40px;
+    color: rgb(168, 166, 166);
+    cursor: pointer;
+}
+
+#closeSettings:hover {
+    color: rgb(114, 113, 113);
+}
+
+.sidenav-trigger i {
+    font-size: 50px;
+}
