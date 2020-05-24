@@ -20,6 +20,5 @@ function displayLinesToggle(trainLine){
     else {
         route.push(trainLine);
         console.log(route);
-
     }
 }
