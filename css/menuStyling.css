@@ -26,6 +26,19 @@
     color: rgb(114, 113, 113);
 }
 
-.sidenav-trigger i {
-    font-size: 50px;
+.brand-logo i {
+    padding-left: .5em;
 }
+
+.brand-logo i:hover {
+    transition: color .25s;
+    padding-left: .5em;
+    color: gray;
+}
+
+.logo {
+    padding-top: 7px;
+    width: 3.5em;
+    height: 3.5em;
+    margin-left: 50%;
+ }

@@ -11,14 +11,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $(document).ready(function(){
     $('.sidenav').sidenav();
-    //Opening sidenav for dev, remove!!
-    $('.sidenav').sidenav('open');
 
     //Closing sidenav if user clicks close icon
     $("#closeSettings").click(function() {
         $('.sidenav').sidenav('close');
     });
+    $(".brand-logo").click(function() {
+      console.log('hi');
+      $('.sidenav').sidenav('open');
   });
+  });
+
+  /*Controlling input from setting sliders*/
 
 
 
