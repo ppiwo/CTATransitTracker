@@ -80,8 +80,8 @@ function checkIfMarkerExists(routeNumberNew, lat, long){
 }
 
 
-//removing existing markers of a certain line color. Line colors are stored under title propery
-function removeLine (lineColor){
+//hiding existing markers of a certain line color. Line colors are stored under title propery
+function hideLine (lineColor){
   for (var i = 0; i < markerMap.length; i++){
     if (markerMap[i].title == lineColor && markerMap[i].visible == true){
       console.log('removing ' +lineColor);
@@ -90,6 +90,7 @@ function removeLine (lineColor){
   }
 }
 
+//unhiding existing markers
 function addLine (lineColor){
   for (var i = 0; i < markerMap.length; i++){
     if (markerMap[i].title == lineColor && markerMap[i].visible == false){
