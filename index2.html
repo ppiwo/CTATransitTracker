@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>CTA Train Tracker</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,7 +24,7 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXOKuD4KqV7u_1AY295qwmTYvbotatIMM&callback=initMap"></script>
   </head>
   <body>
-    <ul id="slide-out" class="sidenav">
+    <ul id="slide-out" class="sidenav grey lighten-2">
         <a id="hi"><i class="material-icons" id="closeSettings">chevron_left</i></a>
         <h5>Select Train Lines</h2>
       <li>
@@ -34,7 +34,7 @@
             <label class="white-text">
               Off
               <input type="checkbox" checked>
-              <span class="lever"></span>
+              <span id="redLineToggle" class="lever"></span>
               On
             </label>
           </div>
@@ -47,7 +47,7 @@
             <label class="white-text">
               Off
               <input type="checkbox" checked>
-              <span class="lever"></span>
+              <span id="blueLineToggle" class="lever"></span>
               On
             </label>
           </div>
@@ -60,7 +60,7 @@
               <label class="white-text">
                 Off
                 <input type="checkbox" checked>
-                <span class="lever"></span>
+                <span id="greenLineToggle" class="lever"></span>
                 On
               </label>
             </div>
@@ -73,7 +73,7 @@
                 <label class="white-text">
                   Off
                   <input type="checkbox" checked>
-                  <span class="lever"></span>
+                  <span id="purpleLineToggle" class="lever"></span>
                   On
                 </label>
               </div>
@@ -86,7 +86,7 @@
                   <label class="white-text">
                     Off
                     <input type="checkbox" checked>
-                    <span class="lever"></span>
+                    <span id="pinkLineToggle" class="lever"></span>
                     On
                   </label>
                 </div>
@@ -99,7 +99,7 @@
                     <label class="white-text">
                       Off
                       <input type="checkbox" checked>
-                      <span class="lever"></span>
+                      <span id="yellowLineToggle" class="lever"></span>
                       On
                     </label>
                   </div>
@@ -112,7 +112,7 @@
                       <label class="white-text">
                         Off
                         <input type="checkbox" checked>
-                        <span class="lever"></span>
+                        <span id="orangeLineToggle" class="lever"></span>
                         On
                       </label>
                     </div>
@@ -125,7 +125,7 @@
                         <label class="white-text">
                           Off
                           <input type="checkbox" checked>
-                          <span class="lever"></span>
+                          <span id="brownLineToggle" class="lever"></span>
                           On
                         </label>
                       </div>

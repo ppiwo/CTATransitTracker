@@ -79,3 +79,22 @@ function checkIfMarkerExists(routeNumberNew, lat, long){
   }
 }
 
+
+//removing existing markers of a certain line color. Line colors are stored under title propery
+function removeLine (lineColor){
+  for (var i = 0; i < markerMap.length; i++){
+    if (markerMap[i].title == lineColor && markerMap[i].visible == true){
+      console.log('removing ' +lineColor);
+      markerMap[i].setVisible(false);
+}
+  }
+}
+
+function addLine (lineColor){
+  for (var i = 0; i < markerMap.length; i++){
+    if (markerMap[i].title == lineColor && markerMap[i].visible == false){
+    console.log('adding back ' +lineColor);
+    markerMap[i].setVisible(true);
+}
+  }
+}

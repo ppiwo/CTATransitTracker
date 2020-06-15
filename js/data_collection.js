@@ -10,13 +10,16 @@ let requestUrl = "https://corsproxy22.herokuapp.com/"; //Using CORS proxy writte
                   await fetch(requestUrl + route)
                   .then(res => res.json())
                   .then((out) => {
+
                     for (var i = 0; i < out.ctatt.route[0].train.length; i++){ //add route color prop to each train
-                      out.ctatt.route[0].train[i].lineColor = route;
+                      if (out.ctatt.route[0].train[i] != null){
+                      out.ctatt.route[0].train[i].lineColor = route;
                     }
+                    }
                     trainmappings.push(out);
                     parseData(trainmappings.pop());
                   })
-                  .catch(err => { console.log('error') });
+//                   .catch(err => { console.log('error') });
               };
       function successCallback(){
         console.log('success')
@@ -33,7 +36,22 @@ let requestUrl = "https://corsproxy22.herokuapp.com/"; //Using CORS proxy writte
 
       }
     const interval = setInterval(function() {
-      // getData(route);
+      getData(route);
       }, 5000);
       interval();
       console.log(trainmappings);
+
+      //adding or removing train lines, toggled by levers in the settings
+      function addRemoveTrainLines(lineColor){
+        var index = route.indexOf(lineColor);
+        if (index !== -1) {
+          route.splice(index, 1);
+          console.log('removed ' +lineColor);
+          //make call to remove existing markers
+          removeLine(lineColor);
+        }else{
+          route.push(lineColor);
+          console.log('added ' +lineColor);
+          addLine(lineColor)
+        }
+    }

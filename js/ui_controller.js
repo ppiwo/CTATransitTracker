@@ -16,13 +16,38 @@ document.addEventListener('DOMContentLoaded', function() {
     $("#closeSettings").click(function() {
         $('.sidenav').sidenav('close');
     });
+    //opening sidenav if menu icon in nav bar is clicked
     $(".brand-logo").click(function() {
-      console.log('hi');
       $('.sidenav').sidenav('open');
   });
+    /*Controlling input from setting levers*/
+    $("#redLineToggle").click(function() {
+      addRemoveTrainLines('red');
+    });
+    $("#blueLineToggle").click(function() {
+      addRemoveTrainLines('blue');
+    });
+    $("#greenLineToggle").click(function() {
+      addRemoveTrainLines('green');
+    });
+    $("#purpleLineToggle").click(function() {
+      addRemoveTrainLines('purple');
+    });
+    $("#pinkLineToggle").click(function() {
+      addRemoveTrainLines('pink');
+    });
+    $("#yellowLineToggle").click(function() {
+      addRemoveTrainLines('yellow');
+    });
+    $("#orangeLineToggle").click(function() {
+      addRemoveTrainLines('orange');
+    });
+    $("#brownLineToggle").click(function() {
+      addRemoveTrainLines('brown');
+    });
   });
 
-  /*Controlling input from setting sliders*/
+
 
 
 
