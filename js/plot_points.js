@@ -34,7 +34,8 @@ function plotPoints(lati, long, line, routeNumber){
     title: line,
     routeNumber: routeNumber,
     icon: {
-      url: setMarkerColor(line)
+      url: setMarkerColor(line),
+      scaledSize: new google.maps.Size(35, 30), // scaled size
     }
   });
   if (marker.typeof != "undefined"){
