@@ -9,7 +9,17 @@ var markerMap = []
           streetViewControl: false,
           fullscreenControl: false,
           mapTypeControl: false,
+          styles: [
+            {
+              "featureType": "poi",
+              "stylers": [
+                { "visibility": "off" }
+              ]
+            }
+          ]
         });
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
       }
 
 function plotPoints(lati, long, line, routeNumber){

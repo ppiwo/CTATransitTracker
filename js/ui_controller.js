@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
     /*Controlling input from setting levers*/
     $("#redLineToggle").click(function() {
-      addRemoveTrainLin es('red');
+      addRemoveTrainLines('red');
     });
     $("#blueLineToggle").click(function() {
       addRemoveTrainLines('blue');
