@@ -19,7 +19,7 @@ let requestUrl = "https://corsproxy22.herokuapp.com/"; //Using CORS proxy writte
                     trainmappings.push(out);
                     parseData(trainmappings.pop());
                   })
-//                   .catch(err => { console.log('error') });
+                  .catch(err => { console.log('Error: fetching data from CTA API - no response for ' +route+ ' line. There may not be any trains scheduled.') });
               };
       function successCallback(){
         console.log('success')
@@ -36,7 +36,7 @@ let requestUrl = "https://corsproxy22.herokuapp.com/"; //Using CORS proxy writte
 
       }
     const interval = setInterval(function() {
-      getData(route);
+      // getData(route);
       }, 5000);
       interval();
       console.log(trainmappings);

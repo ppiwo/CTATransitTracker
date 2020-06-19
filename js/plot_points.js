@@ -5,7 +5,7 @@ var markerMap = []
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 41.881832, lng: -87.623177},
-          zoom: 15,
+          zoom: 14,
           streetViewControl: false,
           fullscreenControl: false,
           mapTypeControl: false,
@@ -22,7 +22,7 @@ var markerMap = []
         transitLayer.setMap(map);
       }
 
-function plotPoints(lati, long, line, routeNumber){
+function plotPoints(lati, long, line, routeNumber, heading){
   if (routeNumber.typeof != "undefined" && markerMap.typeof != "undefined"){
   if (checkIfMarkerExists(routeNumber, lati, long)){
     return;
@@ -34,8 +34,9 @@ function plotPoints(lati, long, line, routeNumber){
     title: line,
     routeNumber: routeNumber,
     icon: {
-      url: setMarkerColor(line),
-      scaledSize: new google.maps.Size(35, 30), // scaled size
+      url: setMarkerColor(line, heading),
+      scaledSize: new google.maps.Size(50, 50), // scaled size
+      rotation: 180
     }
   });
   if (marker.typeof != "undefined"){
@@ -43,40 +44,50 @@ function plotPoints(lati, long, line, routeNumber){
   }
 }
 }
+//setting the marker image depending on train line and heading of the train
+function setMarkerColor(line, heading){
 
-function setMarkerColor(line){
+//train marker images are organized in directories by direction, setDirection() converts heading degrees to a direction (N,S,E,W, etc.)
+var direction = setDirection(heading);
+var path = 'http://127.0.0.1:5500/assets/train_markers/' + direction + '/';
+
   if (line === "red"){
-    return "http://127.0.0.1:5500/assets/train_markers/red_line.png"
+    return path + 'red_line.png';
   }
   if (line === "blue"){
-    return "http://127.0.0.1:5500/assets/train_markers/blue_line.png"
+      return path + 'blue_line.png';
   }
   if (line === "brown"){
-    return "http://127.0.0.1:5500/assets/train_markers/brown_line.png"
+    return path + 'brown_line.png';
   }
   if (line === "green"){
-    return "http://127.0.0.1:5500/assets/train_markers/green_line.png"
+    return path + 'green_line.png';
   }
   if (line === "orange"){
-    return "http://127.0.0.1:5500/assets/train_markers/orange_line.png"
+    return path + 'orange_line.png';
   }
   if (line === "pink"){
-    return "http://127.0.0.1:5500/assets/train_markers/pink_line.png"
+    return path + 'pink_line.png';
   }
   if (line === "purple"){
-    return "http://127.0.0.1:5500/assets/train_markers/purple_line.png"
+    return path + 'purple_line.png';
   }
   if (line === "yellow"){
-    return "http://127.0.0.1:5500/assets/train_markers/yellow_line.png"
+    return path + 'yellow_line.png';
   }
+}
 
-
-
-
-
-
-
-window.localStorage.setItem('user', JSON.stringify(person));
+function setDirection(heading){
+  if (heading > 300 || heading <= 60){
+    return 'north';
+  }
+  if (heading > 61 && heading < 120){
+    return 'east'
+  }
+  if (heading <= 120 < heading <= 240){
+    return 'south';
+  }
+  return 'west';
 }
 
 function checkIfMarkerExists(routeNumberNew, lat, long){
