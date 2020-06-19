@@ -97,7 +97,6 @@ function checkIfMarkerExists(routeNumberNew, lat, long){
       markerMap[i].setPosition(latLng);
       return true;
     }
-    // return false;
   }
 }
 

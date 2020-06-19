@@ -1,6 +1,6 @@
 let route = ["red", "blue", "brown", "green", "orange", "pink", "purple", "yellow"];
 let requestUrl = "https://corsproxy22.herokuapp.com/"; //Using CORS proxy written in Node to prevent CORS errors
-// let trainData = [""]; //Storing all JSON data from API requests
+
 
       const getData = (routes)=>{
 
@@ -21,22 +21,15 @@ let requestUrl = "https://corsproxy22.herokuapp.com/"; //Using CORS proxy writte
                   })
                   .catch(err => { console.log('Error: fetching data from CTA API - no response for ' +route+ ' line. There may not be any trains scheduled.') });
               };
-      function successCallback(){
-        console.log('success')
-      }
-
-      function failCallback(){
-        console.log('fail')
-      }
-
+      
         routes.map(i => {
-          getRes(i, successCallback, failCallback)
+          getRes(i)
         })
 
 
       }
     const interval = setInterval(function() {
-      // getData(route);
+      getData(route);
       }, 5000);
       interval();
       console.log(trainmappings);
