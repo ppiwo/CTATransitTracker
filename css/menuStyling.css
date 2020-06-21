@@ -42,3 +42,21 @@
     height: 3.5em;
     margin-left: 50%;
  }
+
+/* Mobile nav bar optimizations */
+ @media only screen and (max-width: 600px) {
+
+    /* Moving hamburger menu icon to the left side */
+    nav .brand-logo {
+        position: absolute;
+        left: 30px;
+    }
+
+    .logo {
+        padding-top: 7px;
+        width: 3.25em;
+        height: 3.5em;
+        margin-left: 45%;
+     }
+
+ }

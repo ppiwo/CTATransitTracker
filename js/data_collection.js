@@ -29,7 +29,7 @@ let requestUrl = "https://corsproxy22.herokuapp.com/"; //Using CORS proxy writte
 
       }
     const interval = setInterval(function() {
-      getData(route);
+      // getData(route);
       }, 5000);
       interval();
       console.log(trainmappings);
