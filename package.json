@@ -1,0 +1,22 @@
+{
+  "name": "ctatransittracker",
+  "version": "1.0.0",
+  "description": "A train tracker that uses the CTA API to plot trains on Google Maps.",
+  "main": "data_collection.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppiwo/CTATransitTracker.git"
+  },
+  "author": "Patrick Piwowarczyk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ppiwo/CTATransitTracker/issues"
+  },
+  "homepage": "https://github.com/ppiwo/CTATransitTracker#readme",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
+}
