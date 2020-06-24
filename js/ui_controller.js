@@ -45,6 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
     $("#brownLineToggle").click(function() {
       addRemoveTrainLines('brown');
     });
+    $("#brownLineToggle").click(function() {
+      addRemoveTrainLines('brown');
+    });
   });
 
 
