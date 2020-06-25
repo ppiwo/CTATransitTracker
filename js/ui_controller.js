@@ -3,49 +3,49 @@
 *Author: Patrick Piwowarczyk
 */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init();
   });
 
 
-  $(document).ready(function(){
+  $(document).ready( () =>{
     $('.sidenav').sidenav();
 
     //Closing sidenav if user clicks close icon
-    $("#closeSettings").click(function() {
+    $("#closeSettings").click( () => {
         $('.sidenav').sidenav('close');
     });
     //opening sidenav if menu icon in nav bar is clicked
-    $(".brand-logo").click(function() {
+    $(".brand-logo").click( () => {
       $('.sidenav').sidenav('open');
   });
     /*Controlling input from setting levers*/
-    $("#redLineToggle").click(function() {
+    $("#redLineToggle").click( () => {
       addRemoveTrainLines('red');
     });
-    $("#blueLineToggle").click(function() {
+    $("#blueLineToggle").click( () => {
       addRemoveTrainLines('blue');
     });
-    $("#greenLineToggle").click(function() {
+    $("#greenLineToggle").click( () => {
       addRemoveTrainLines('green');
     });
-    $("#purpleLineToggle").click(function() {
+    $("#purpleLineToggle").click( () => {
       addRemoveTrainLines('purple');
     });
-    $("#pinkLineToggle").click(function() {
+    $("#pinkLineToggle").click( () => {
       addRemoveTrainLines('pink');
     });
-    $("#yellowLineToggle").click(function() {
+    $("#yellowLineToggle").click( () => {
       addRemoveTrainLines('yellow');
     });
-    $("#orangeLineToggle").click(function() {
+    $("#orangeLineToggle").click( () => {
       addRemoveTrainLines('orange');
     });
-    $("#brownLineToggle").click(function() {
+    $("#brownLineToggle").click( () => {
       addRemoveTrainLines('brown');
     });
-    $("#brownLineToggle").click(function() {
+    $("#brownLineToggle").click( () => {
       addRemoveTrainLines('brown');
     });
   });

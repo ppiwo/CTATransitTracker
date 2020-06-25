@@ -2,7 +2,7 @@ let route = ["red", "blue", "brown", "green", "orange", "pink", "purple", "yello
 let requestUrl = "https://corsproxy22.herokuapp.com/"; //Using CORS proxy written in Node to prevent CORS errors
 
 
-      const getData = (routes)=>{
+      const getData = (routes) => {
 
         let trainmappings = [];
 
@@ -28,15 +28,16 @@ let requestUrl = "https://corsproxy22.herokuapp.com/"; //Using CORS proxy writte
 
 
       }
-    const interval = setInterval(function() {
+    const interval = setInterval(() => {
       getData(route);
       }, 5000);
       interval();
       console.log(trainmappings);
 
       //adding or removing train lines, toggled by levers in the settings
-      function addRemoveTrainLines(lineColor){
+      function addRemoveTrainLines(lineColor) {
         var index = route.indexOf(lineColor);
+
         if (index !== -1) {
           route.splice(index, 1);
           //make call to hide existing markers

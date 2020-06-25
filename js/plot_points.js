@@ -22,12 +22,14 @@ var markerMap = []
         transitLayer.setMap(map);
       }
 
-function plotPoints(lati, long, line, routeNumber, heading){
+let plotPoints = (lati, long, line, routeNumber, heading) => {
   if (routeNumber.typeof != "undefined" && markerMap.typeof != "undefined"){
   if (checkIfMarkerExists(routeNumber, lati, long)){
     return;
   }
+
   var myLatLng = {lat: Number(lati), lng: Number(long)};
+
   var marker = new google.maps.Marker({
     position: myLatLng,
     map: map,
@@ -45,7 +47,7 @@ function plotPoints(lati, long, line, routeNumber, heading){
 }
 }
 //setting the marker image depending on train line and heading of the train
-function setMarkerColor(line, heading){
+let setMarkerColor = (line, heading) => {
 
 //train marker images are organized in directories by direction, setDirection() converts heading degrees to a direction (N,S,E,W, etc.)
 var direction = setDirection(heading);
@@ -77,7 +79,7 @@ var path = 'http://127.0.0.1:5500/assets/train_markers/' + direction + '/';
   }
 }
 
-function setDirection(heading){
+let setDirection = (heading) => {
   if (heading > 300 || heading <= 60){
     return 'north';
   }
@@ -90,7 +92,7 @@ function setDirection(heading){
   return 'west';
 }
 
-function checkIfMarkerExists(routeNumberNew, lat, long){
+let checkIfMarkerExists = (routeNumberNew, lat, long) => {
   for (var i = 0; i < markerMap.length; i++){
     if (markerMap[i].routeNumber == routeNumberNew){
       var latLng = {lat: Number(lat), lng: Number(long)};
@@ -102,7 +104,7 @@ function checkIfMarkerExists(routeNumberNew, lat, long){
 
 
 //hiding existing markers of a certain line color. Line colors are stored under title propery
-function hideLine (lineColor){
+let hideLine = (lineColor) => {
   for (var i = 0; i < markerMap.length; i++){
     if (markerMap[i].title == lineColor && markerMap[i].visible == true){
       console.log('removing ' +lineColor);
@@ -112,7 +114,7 @@ function hideLine (lineColor){
 }
 
 //unhiding existing markers
-function addLine (lineColor){
+let addLine = (lineColor) => {
   for (var i = 0; i < markerMap.length; i++){
     if (markerMap[i].title == lineColor && markerMap[i].visible == false){
     console.log('adding back ' +lineColor);
