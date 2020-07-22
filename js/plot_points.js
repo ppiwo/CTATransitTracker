@@ -48,7 +48,7 @@ let plotPoints = (lati, long, line, routeNumber, heading) => {
 let setMarkerColor = (line, heading) => {
   //train marker images are organized in directories by direction, setDirection() converts heading degrees to a direction (N,S,E,W, etc.)
   var direction = setDirection(heading);
-  var path = "http://127.0.0.1:5500/assets/train_markers/" + direction + "/";
+  var path = "./assets/train_markers/" + direction + "/";
 
   if (line === "red") {
     return path + "red_line.png";
