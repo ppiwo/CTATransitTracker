@@ -41,9 +41,8 @@ const getData = (routes) => {
 };
 const interval = setInterval(() => {
   getData(route);
-}, 5000);
-interval();
-console.log(trainmappings);
+}, 8000);
+
 
 //adding or removing train lines, toggled by levers in the settings
 function addRemoveTrainLines(lineColor) {

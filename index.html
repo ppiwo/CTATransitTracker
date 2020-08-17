@@ -17,13 +17,14 @@
     <link rel="stylesheet" type="text/css" href="css/googlemaps.css">
     <link rel="stylesheet" type="text/css" href="css/menuStyling.css">
     <script type="text/javascript" src="js/plot_points.js"></script>
-    <script type="text/javascript" src="js/test.js"></script>
     <script type="text/javascript" src="js/data_parse.js"></script>
     <script type="text/javascript" src="js/data_collection.js"></script>
     <script type="text/javascript" src="config.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key={YOUR GOOGLE MAPS API KEY HERE}&callback=initMap"></script>
   </head>
   <body>
+
+
     <ul id="slide-out" class="sidenav grey lighten-2">
         <a id="hi"><i class="material-icons" id="closeSettings">chevron_left</i></a>
         <h5>Select Train Lines</h2>
@@ -138,7 +139,22 @@
         <img class="logo" src="assets/ui/cta_logo.png">
       </div>
     </nav>
-  <div id="map"></div>
+    <div id ="loader" class="loader">
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer big spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+    <span>Loading train data, please wait.</span>
+  </div>
+  <div id="map" class="mapLoading"></div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  </body>
+
+</body>
 </html>

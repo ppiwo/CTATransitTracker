@@ -2,6 +2,21 @@ var map;
 var marker;
 var markerMap = [];
 
+let loader = {
+  loaderEnabled: true
+}
+
+let markerMapSize = 0;
+
+//Showing a spinner with a loading message until CTA train data is parsed
+function disableLoader() {
+  if (markerMapSize > 20) {
+    loader.loaderEnabled = false;
+    document.getElementById('loader').className = 'loaderHide';
+    document.getElementById('map').className = '';
+  }
+}
+
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 41.881832, lng: -87.623177 },
@@ -41,6 +56,8 @@ let plotPoints = (lati, long, line, routeNumber, heading) => {
     });
     if (marker.typeof != "undefined") {
       markerMap.push(marker);
+      markerMapSize = markerMap.length;
+      disableLoader();
     }
   }
 };

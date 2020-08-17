@@ -13,3 +13,25 @@ body {
 .brand-logo {
     margin-left: 0px;
 }
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 10% auto 0% auto;
+    align-items: center;
+}
+
+.loader span {
+    padding: 2em;
+    font-size: 1.5em;
+    color: white;
+}
+
+.loaderHide {
+    display: none;
+}
+
+.mapLoading {
+    display: none;
+}
