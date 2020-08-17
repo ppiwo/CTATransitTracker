@@ -25,7 +25,7 @@ Desktop | Mobile
 ``` 
 git clone https://github.com/ppiwo/CTATransitTracker.git 
 ```
-* Create a new file in ```./settings.js```
+* Create a new file in ```./config.js```
 ``` 
 const API_KEY = "{YOUR CTA API KEY}";
 ```
